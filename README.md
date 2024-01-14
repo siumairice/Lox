@@ -1,3 +1,5 @@
 # Lox
 A compact Turing complete programming language with C-like syntax. 
-https://craftinginterpreters.com/ with a few twists
+Following along: https://craftinginterpreters.com/
+Notes Notion: https://www.notion.so/Parts-of-a-Programming-Language-156277a1034c460380038beeda62fafd?pvs=4
+
