@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Lox {
+  static boolean hadError = false;
   public static void main(String[] args) throws IOException {
     if (args.length > 1) {
       System.out.println("Usage: jlox [script]");
@@ -26,6 +27,8 @@ public class Lox {
     byte[] bytes = Files.readAllBytes(Paths.get(path));
     // Convert the bytes to a String using the default character set
     run(new String(bytes, Charset.defaultCharset()));
+    // Indicate an error in the exit code.
+    if (hadError) System.exit(65);
   }
   
   private static void runPrompt() throws IOException {
@@ -37,6 +40,7 @@ public class Lox {
       String line = reader.readLine();
       if (line == null) break;
       run(line);
+      hadError = false;
     }
   }
   
